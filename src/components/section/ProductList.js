@@ -4,6 +4,9 @@ import ProductItem from './ProductItem';
 
 export default function ProductList() {
     const products = useProducts()
+    // const onClickHandler = (id) => {
+    //     router.push(`/productItem/${id}`)
+    // }
     
     return (
         <div className="flex justify-around">

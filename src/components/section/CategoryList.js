@@ -1,8 +1,10 @@
-import useCategories from '../../Hooks/useCategories';
 import CategoryItem from './CategoryItem';
+import {Context} from '../context/MyContext'
+import { useContext } from 'react';
 
 export default function CategoryList() {
-    const categories = useCategories();
+    const {categories} = useContext(Context);
+    console.log(categories)
   
     return (
       <div className='flex justify-evenly'>
