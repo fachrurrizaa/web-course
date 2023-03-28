@@ -1,12 +1,9 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
-import ProductPage from "../product-page/ProductPage";
-import CategoryList from "../section/CategoryList";
-import ProductList from "../section/ProductList";
 
 const Context = createContext(null)
 
-const Provider = () => {
+const Provider = ({children}) => {
     const [categories, setCategories] = useState([])
 
     useEffect(() => {
@@ -34,11 +31,9 @@ const Provider = () => {
 
     return (
         <Context.Provider value={{products, categories}}>
-            <CategoryList/>
-            <ProductList/>
-            <ProductPage/>
+            {children}
         </Context.Provider>
     )
 }
 
-export default {Context, Provider}
+export {Context, Provider}

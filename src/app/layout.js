@@ -1,3 +1,5 @@
+'use client'
+import { Provider } from '@/components/context/MyContext'
 import '../../styles/globals.css'
 
 export const metadata = {
@@ -8,7 +10,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className='px-[120px]'>{children}</body>
+      <body className='px-[120px]'>
+        <Provider>
+          {children}
+        </Provider>
+      </body>
     </html>
   )
 }

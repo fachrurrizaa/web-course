@@ -1,12 +1,9 @@
-'use client'
-import useProducts from "@/Hooks/useProduct"
 import ProductItem from './ProductItem';
+import { Context } from '../context/MyContext';
+import { useContext } from 'react';
 
 export default function ProductList() {
-    const products = useProducts()
-    // const onClickHandler = (id) => {
-    //     router.push(`/productItem/${id}`)
-    // }
+    const { products } = useContext(Context)
     
     return (
         <div className="flex justify-around">
