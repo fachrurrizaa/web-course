@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 export default function Hero() {
   return (
     <div className='hero-content max-w-full min-h-[90vh] justify-around flex-col lg:flex-row-reverse'>

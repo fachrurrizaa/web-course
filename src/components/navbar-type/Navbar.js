@@ -13,7 +13,7 @@ export default function Navbar() {
             </ul>
         </nav>
         <div>
-            <Link href="" className="font-medium text-base"><button className="font-medium text-base text-[#160442] bg-slate-200 py-2 px-6 rounded-full cursor-pointer transition-all ease-in-out hover:bg-slate-300 mr-2">Sign in</button></Link>
+            <Link href="/login" className="font-medium text-base"><button className="font-medium text-base text-[#160442] bg-slate-200 py-2 px-6 rounded-full cursor-pointer transition-all ease-in-out hover:bg-slate-300 mr-2">Sign in</button></Link>
             <Link href="" className="font-medium text-base"><button className="font-medium text-base text-white bg-[#160442] py-2 px-6 rounded-full cursor-pointer transition-all ease-in-out hover:bg-[#160442d8]">Sign Up</button></Link>
         </div>
     </header>
