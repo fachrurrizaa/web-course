@@ -1,5 +1,5 @@
 'use client'
-import Navbar from "@/components/navbar-type/Navbar"
+import Navbar from "@/components/navbar/Navbar"
 import ProductPage from "@/components/product-page/ProductPage"
 import { Context } from "@/components/context/MyContext"
 import { useContext } from "react"
