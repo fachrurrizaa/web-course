@@ -9,7 +9,7 @@ export default function Navbar() {
             <ul className="flex justify-between">
                 <li className="font-medium text-base text-[#160442] inline-block py-0 px-5 transition-all ease-in-out cursor-pointer hover:font-bold"><Link href="/">Home</Link></li>
                 <li className="font-medium text-base text-[#160442] inline-block py-0 px-5 transition-all ease-in-out cursor-pointer hover:font-bold">Categories</li>
-                <li className="font-medium text-base text-[#160442] inline-block py-0 px-5 transition-all ease-in-out cursor-pointer hover:font-bold">Pricing</li>
+                <li className="font-medium text-base text-[#160442] inline-block py-0 px-5 transition-all ease-in-out cursor-pointer hover:font-bold"><Link href="/pricing">Pricing</Link></li>
                 <li className="font-medium text-base text-[#160442] inline-block py-0 px-5 transition-all ease-in-out cursor-pointer hover:font-bold">Study Case</li>
             </ul>
         </nav>

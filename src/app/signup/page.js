@@ -1,5 +1,4 @@
 import Feature from "@/components/Feature";
-import Input from "@/components/form/input";
 import Navbar from './../../components/navbar/Navbar';
 import Costumize from "../../../public/assets/costumize.svg";
 import Fortune from "../../../public/assets/fortune.svg";
