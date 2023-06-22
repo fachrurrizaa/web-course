@@ -8,7 +8,7 @@ const Provider = ({children}) => {
 
     useEffect(() => {
         const getCategories = async () => {
-          const { data } = await axios(`https://zullkit-backend.demo.belajarkoding.com/api/categories`)
+          const { data } = await axios(`https://zullkit-backend.belajarkoding.com/api/categories`)
 
           setCategories(data.data.data)
         }
@@ -21,7 +21,7 @@ const Provider = ({children}) => {
 
     useEffect(() => {
       const getProducts = async () => {
-        const { data } = await axios(`https://zullkit-backend.demo.belajarkoding.com/api/products`);
+        const { data } = await axios(`https://zullkit-backend.belajarkoding.com/api/products`);
   
         setProducts(data.data.data);
       };

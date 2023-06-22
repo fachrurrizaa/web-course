@@ -2,6 +2,7 @@ import { Inter } from 'next/font/google'
 import Navbar from '@/components/navbar/Navbar'
 import Hero from './../components/Hero';
 import dynamic from 'next/dynamic'
+import Footer from '@/components/Footer';
 
 const Section = dynamic (() => import ('@/components/section/Section'))
 
@@ -13,6 +14,7 @@ export default function Home() {
       <Navbar/>
       <Hero/>
       <Section/>
+      <Footer/>
     </>
   )
 }
