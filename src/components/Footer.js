@@ -18,9 +18,8 @@ export default function Footer() {
         <div>
             <span className="footer-title">Company</span> 
             <Link href="/about" className="link link-hover">About us</Link> 
-            <a className="link link-hover">Contact</a> 
-            <a className="link link-hover">Jobs</a> 
-            <a className="link link-hover">Press kit</a>
+            <Link href="/contact-us" className="link link-hover">Contact Us</Link>
+            <Link href="/teams" className="link link-hover">Teams</Link>
         </div> 
         <div>
             <span className="footer-title">Legal</span> 
