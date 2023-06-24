@@ -3,7 +3,7 @@ import Button from './../Button';
 
 export default function Navbar() {
   return (
-    <header className="flex justify-between items-center p-5">
+    <header className="flex justify-between items-center p-5 px-32">
         <h1 className="cursor-pointer text-4xl font-bold text-[#160442]">Rizaa</h1>
         <nav>
             <ul className="flex justify-between">
