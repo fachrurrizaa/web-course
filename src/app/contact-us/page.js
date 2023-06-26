@@ -1,9 +1,15 @@
 'use client'
+import Footer from '@/components/Footer';
+import Navbar from '@/components/navbar/Navbar';
 import React from 'react'
 import Contact from './../../components/contact/Contact';
 
 export default function page() {
   return (
-    <Contact/>
+    <>
+      <Navbar/>
+      <Contact/>
+      <Footer/>
+    </>
   )
 }

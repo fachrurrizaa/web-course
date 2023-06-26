@@ -10,7 +10,7 @@ export default function page() {
     <div className="min-h-screen">
       <Navbar/>
       <div className="flex flex-col mt-20 items-center min-w-full">
-          <h1 className="text-5xl text-[#160442] font-bold leading-[63px] text-center mb-16">Join & Get Our <br/>Pro Benefits</h1>
+          <h1 className="text-5xl text-[#004f4f] font-bold leading-[63px] text-center mb-16">Join & Get Our <br/>Pro Benefits</h1>
           <div className="flex">
               <div className="mr-44">
                   <Feature src={ Costumize } content={"Costumizable"}/>

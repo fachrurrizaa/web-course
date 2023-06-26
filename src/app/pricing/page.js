@@ -12,7 +12,7 @@ export default function page() {
         <Navbar />
         <div className="flex flex-col items-center">
             <div className="mr-[140px]">
-                <h1 className="font-bold text-5xl text-[#160442] leading-[63px] text-center mt-16 mb-3">Friendly Pricing,<br/>High Quality Design</h1>
+                <h1 className="font-bold text-5xl text-[#004f4f] leading-[63px] text-center mt-16 mb-3">Friendly Pricing,<br/>High Quality Design</h1>
                 <p className="font-normal text-xl text-[#6B7193] text-center">Working faster and better than before</p>
             </div>
             <div className="flex mb-24 mt-16 gap-20 mr-32">

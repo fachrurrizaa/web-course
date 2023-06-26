@@ -8,9 +8,9 @@ export default function SignUp() {
         <Input type={"text"} label={"Name"} placeholder={"Type your full name"}/>
         <Input type={"email"} label={"Email Address"} placeholder={"Type your email"}/>
         <Input type={"password"} label={"Password"} placeholder={"Type your password"}/>
-        <Button className={"text-white bg-[#642DFB] mt-4 mb-4 hover:bg-[#642dfbbe]"} content={"Continue Sign Up"}/>
+        <Button className={"text-white mt-4 mb-4 bg-[#028d94] hover:bg-[#02b2bb]"} content={"Continue Sign Up"}/>
         <Link href="/login">
-          <Button className={"text-[#160442] bg-[#EBEDF3] hover:bg-slate-300 w-full"} content={"Sign In"}/>
+          <Button className={"text-[#004f4f] bg-[#EBEDF3] hover:bg-slate-300 w-full"} content={"Sign In"}/>
         </Link>
     </div>
   )

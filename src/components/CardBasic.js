@@ -10,25 +10,25 @@ export default function CardBasic() {
         <p className="text-base font-normal text-[#6B7193] mb-7">Suitable for new team</p>
         <div className="flex gap-3 mb-4">
             <Image src={ Check } height={0} width={0} alt="check-icon" className="w-6 h-auto"/>
-            <p className="text-base font-normal text-[#160442]">Customizable layers</p>
+            <p className="text-base font-normal text-[#004f4f]">Customizable layers</p>
         </div>
         <div className="flex gap-3 mb-4">
             <Image src={ Check } height={0} width={0} alt="check-icon" className="w-6 h-auto"/>
-            <p className="text-base font-normal text-[#160442]">Official documentation</p>
+            <p className="text-base font-normal text-[#004f4f]">Official documentation</p>
         </div>
         <div className="flex gap-3 mb-4">
             <Image src={ Check } height={0} width={0} alt="check-icon" className="w-6 h-auto"/>
-            <p className="text-base font-normal text-[#160442]">SVG icons</p>
+            <p className="text-base font-normal text-[#004f4f]">SVG icons</p>
         </div>
         <div className="flex gap-3 mb-4">
             <Image src={ Check } height={0} width={0} alt="check-icon" className="w-6 h-auto"/>
-            <p className="text-base font-normal text-[#160442]">SVG illustrations</p>
+            <p className="text-base font-normal text-[#004f4f]">SVG illustrations</p>
         </div>
         <div className="flex gap-3 mb-8">
             <Image src={ Check } height={0} width={0} alt="check-icon" className="w-6 h-auto"/>
-            <p className="text-base font-normal text-[#160442]">Pre-built design screen</p>
+            <p className="text-base font-normal text-[#004f4f]">Pre-built design screen</p>
         </div>
-        <Button className={"text-[#160442] bg-[#EBEDF3] w-full hover:bg-[#642dfbbe] hover:text-white"} content={"Checkout Now"}/>
+        <Button className={"text-[#004f4f] bg-[#EBEDF3] w-full hover:bg-[#02b2bb] hover:text-white"} content={"Checkout Now"}/>
     </div>
   )
 }
