@@ -1,7 +1,10 @@
+'use client'
 import Brand from './Brand';
 import Button from '../Button';
 import Input from './input';
-import Link from 'next/link';
+import Image from 'next/image';
+import googleIcon from '/public/assets/googleIcon.svg'
+import { signIn } from "next-auth/react"
 
 export default function SignIn() {
   return (
@@ -14,9 +17,12 @@ export default function SignIn() {
             </div>
             <div className='max-w-xs w-full'>
               <Button  className={'w-full text-white bg-[#028d94] hover:bg-[#02b2bb] mt-8 font-semibold'} content={"Sign In"}/>
-              <Link href="/signup">
-                <Button className={'w-full text-[#004f4f] bg-[#EBEDF3] mt-4 font-medium hover:bg-slate-300'} content={"Create New Account"}/>
-              </Link>
+              <Button click={()=>signIn('google')} className={'w-full text-[#004f4f] bg-[#EBEDF3] mt-4 font-medium hover:bg-slate-300'} content={
+                <div className='flex items-center w-full'>
+                  <Image src={googleIcon} width={0} height={30} alt={"img"} className='mr-10'/>
+                  <p className='text-[#4484f5]'>Sign in with Google</p>
+                </div>
+              }/>
             </div>
         </div>
         <Brand/>
