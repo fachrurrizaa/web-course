@@ -11,15 +11,17 @@ export default function Admin() {
       </label>
       <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
         <li><a>Homepage</a></li>
-        <li><a>Upload Material</a></li>
+        <li><a>Post</a></li>
         <li><a>Member</a></li>
         <li><a>Portofolio</a></li>
         <li><a>About</a></li>
+        <li><a>Tools</a></li>
+        <li><a>Setting</a></li>
       </ul>
     </div>
   </div>
   <div className="navbar-center">
-    <a className="btn btn-ghost normal-case text-xl cursor-pointer text-4xl font-bold text-[#160442]">Dashboard Admin</a>
+    <a className="btn btn-ghost normal-case text-xxxl cursor-pointer text-4xl font-bold text-[#160442]">Dashboard Admin</a>
   </div>
   <div className="navbar-end">
     <button className="btn btn-ghost btn-circle">
@@ -31,6 +33,7 @@ export default function Admin() {
         <span className="badge badge-xs badge-primary indicator-item"></span>
       </div>
     </button>
+
   </div>
 </div>
   )

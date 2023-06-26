@@ -2,7 +2,9 @@ import React from 'react'
 
 export default function Material() {
   return (
-    <><div className="card w-96 bg-base-100 shadow-xl image-full">
+    
+    <> <h1 className='className="btn btn-ghost normal-case text-center cursor-pointer text-xl font-light text-[#160442]'>this is your course</h1>
+    <div className="ml-80 mt-20 card w-60 bg-base-100 shadow-xl image-full">
           <figure><img src="/public/assets/analisis data.png" alt="Shoes" /></figure>
           <div className="card-body">
               <h2 className="card-title">Belajar Analisis Data dengan Phyton</h2>
@@ -11,7 +13,7 @@ export default function Material() {
                   <button className="btn btn-primary">Upload</button>
               </div>
           </div>
-      </div><div className="card w-60 shadow-xl image-full">
+      </div><div className="ml-80 mt-20 card w-60 bg-base-100 shadow-xl image-fulln">
               <figure><img src="/public/assets/analisis data.png" alt="Shoes" /></figure>
               <div className="card-body">
                   <h2 className="card-title">Belajar Analisis Data dengan Phyton</h2>
