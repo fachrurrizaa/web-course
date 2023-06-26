@@ -1,10 +1,10 @@
 import SignIn from '@/components/form/SignIn'
-import Navbar from '@/components/navbar/Navbar'
+import SignNav from '/src/components/navbar/SignNav'
 
 export default function page() {
   return (
     <>
-        <Navbar/>
+        <SignNav/>
         <SignIn/>
     </>
   )

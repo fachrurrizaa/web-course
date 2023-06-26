@@ -1,5 +1,7 @@
+'use client'
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
+import { SessionProvider } from "next-auth/react"
 
 const Context = createContext(null)
 
@@ -30,9 +32,11 @@ const Provider = ({children}) => {
     }, []);
 
     return (
+      <SessionProvider>
         <Context.Provider value={{products, categories}}>
             {children}
         </Context.Provider>
+      </SessionProvider>
     )
 }
 

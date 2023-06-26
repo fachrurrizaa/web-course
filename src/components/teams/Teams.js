@@ -17,7 +17,7 @@ export default function Teams() {
             <TeamsCard name={"Nahdahsakinatussyifa"} nim={"21.11.4314"}/>
         </div>
         <Link href="/">
-          <Button className={"mt-24 bg-[#642DFB] hover:bg-[#471fb3]"} content={"Back to Home"}/>
+          <Button className={"my-24 bg-[#028d94] hover:bg-[#02b2bb]"} content={"Back to Home"}/>
         </Link>
     </div>
   )
