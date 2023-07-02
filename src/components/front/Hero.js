@@ -1,5 +1,5 @@
 import { Player } from '@lottiefiles/react-lottie-player';
-import Button from './Button';
+import Button from '../Button';
 
 export default function Hero() {
   return (

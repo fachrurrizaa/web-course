@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Button from './../Button';
+import Button from '../../Button';
 import Check from "/public/assets/check-icon.svg";
 
 export default function ProductCard({ features }) {

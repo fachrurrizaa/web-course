@@ -6,16 +6,16 @@ export default function ProductImage() {
   
   return (
     <div>
-        <div class="carousel w-full rounded-xl max-w-screen-md h-[550px]">{
+        <div className="carousel w-full rounded-xl max-w-screen-md h-[550px]">{
           products.map(product => product.galleries.map((gallery) => (
-            <div id={ gallery.id } class="carousel-item w-full">
-                <img src={ gallery.url } class="w-full" />
+            <div id={ gallery.id } className="carousel-item w-full">
+                <img src={ gallery.url } className="w-full" />
             </div> 
           )))
         }</div> 
-        <div class="flex justify-center w-full py-2 gap-2">{
+        <div className="flex justify-center w-full py-2 gap-2">{
           products.map(product => product.galleries.map((gallery) => (
-            <a href={`#${gallery.id}`} class="btn btn-xs">{ gallery.id }</a> 
+            <a href={`#${gallery.id}`} className="btn btn-xs">{ gallery.id }</a> 
           )))
         }</div>
     </div>

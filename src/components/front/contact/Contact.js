@@ -1,7 +1,7 @@
 import React from 'react'
 import { Player } from '@lottiefiles/react-lottie-player';
-import Input from './../form/Input';
-import Button from './../Button';
+import Input from '../form/Input';
+import Button from '../../Button';
 
 
 export default function Contact() {

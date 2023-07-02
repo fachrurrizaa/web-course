@@ -1,8 +1,8 @@
-import Feature from "@/components/Feature";
+import Feature from "@/components/front/Feature";
 import Costumize from "../../../public/assets/costumize.svg";
 import Fortune from "../../../public/assets/fortune.svg";
 import Documentation from "../../../public/assets/documentation.svg";
-import SignUp from "@/components/form/SignUp";
+import SignUp from "@/components/front/form/SignUp";
 import SignNav from '/src/components/navbar/SignNav';
 
 export default function page() {

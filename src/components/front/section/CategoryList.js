@@ -1,5 +1,5 @@
 import CategoryItem from './CategoryItem';
-import { Context } from '../context/MyContext'
+import { Context } from '../../context/MyContext'
 import { useContext } from 'react';
 
 export default function CategoryList() {

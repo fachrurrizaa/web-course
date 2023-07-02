@@ -1,11 +1,11 @@
 'use client'
 import { Inter } from 'next/font/google'
-import Navbar from '@/components/navbar/Navbar'
-import Hero from './../components/Hero';
+import Navbar from '@/components/front/navbar/Navbar'
+import Hero from '../components/front/Hero';
 import dynamic from 'next/dynamic'
-import Footer from '@/components/Footer';
+import Footer from '@/components/front/Footer';
 
-const Section = dynamic (() => import ('@/components/section/Section'))
+const Section = dynamic (() => import ('@/components/front/section/Section'))
 
 const inter = Inter({ subsets: ['latin'] })
 

@@ -1,10 +1,10 @@
 import Costumize from "../../../public/assets/costumize.svg";
 import Fortune from "../../../public/assets/fortune.svg";
 import Documentation from "../../../public/assets/documentation.svg";
-import Navbar from "@/components/navbar/Navbar";
-import Feature from '@/components/Feature';
-import CardBasic from "@/components/CardBasic";
-import CardGold from "@/components/CardGold";
+import Navbar from "@/components/front/navbar/Navbar";
+import Feature from '@/components/front/Feature';
+import CardBasic from "@/components/front/CardBasic";
+import CardGold from "@/components/front/CardGold";
 
 export default function page() {
   return (
@@ -19,7 +19,7 @@ export default function page() {
                 <CardBasic/>
                 <CardGold/>
             </div>
-            <div class="flex gap-32">
+            <div className="flex gap-32">
                 <Feature src={ Costumize } content={"Costumizable"}/>
                 <Feature src={ Fortune } content={"500 Fortune"}/>
                 <Feature src={ Documentation } content={"Documentation"}/>

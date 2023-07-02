@@ -1,7 +1,7 @@
 'use client'
 import Brand from './Brand';
-import Button from '../Button';
-import Input from './input';
+import Button from '../../Button';
+import Input from './Input';
 import Image from 'next/image';
 import googleIcon from '/public/assets/googleIcon.svg'
 import { signIn } from "next-auth/react"

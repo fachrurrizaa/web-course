@@ -1,7 +1,7 @@
 'use client'
 import Image from "next/image";
 import Link from "next/link";
-import Button from './../Button';
+import Button from '../../Button';
 import { useSession } from "next-auth/react"
 import pp from '/public/assets/pp.jpg'
 

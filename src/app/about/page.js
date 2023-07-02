@@ -1,7 +1,7 @@
-import Footer from '@/components/Footer'
-import Navbar from '@/components/navbar/Navbar'
+import Footer from '@/components/front/Footer'
+import Navbar from '/src/components/front/navbar/Navbar'
 import React from 'react'
-import About from '@/components/About';
+import About from '@/components/front/About';
 
 export default function page() {
   return (
@@ -13,3 +13,4 @@ export default function page() {
     </>
   )
 }
+
