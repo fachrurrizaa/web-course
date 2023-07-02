@@ -9,6 +9,7 @@ export default function page() {
         <Navbar/>
         <About/>
         <Footer/>
+       
     </>
   )
 }
