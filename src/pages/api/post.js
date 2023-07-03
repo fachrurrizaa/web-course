@@ -20,4 +20,10 @@ export default async function post(req, res) {
         })
         res.json(postDoc)
     }
+    
+    if (method === 'PUT'){
+        const {title, description, price, _id} = req.body;
+        await Post.updateOne({_id}, {title, description, price})
+        res.json(true)
+    }
 }
