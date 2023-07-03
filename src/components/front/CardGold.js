@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Check from "../../public/assets/check-icon.svg";
+import Check from "/public/assets/check-icon.svg";
 import Button from "../Button";
 
 export default function CardGold() {
