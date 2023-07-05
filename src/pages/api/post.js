@@ -14,16 +14,23 @@ export default async function post(req, res) {
     }
 
     if (method === 'POST'){
-        const {title, description, price} = req.body;
+        const {title, description, price, images} = req.body;
         const postDoc = await Post.create({
-            title, description, price
+            title, description, price, images
         })
         res.json(postDoc)
     }
     
     if (method === 'PUT'){
-        const {title, description, price, _id} = req.body;
-        await Post.updateOne({_id}, {title, description, price})
+        const {title, description, price, images, _id} = req.body;
+        await Post.updateOne({_id}, {title, description, price, images})
         res.json(true)
+    }
+
+    if (method === "DELETE"){
+        if (req.query?.id) {
+            await Post.deleteOne({_id:req.query?.id})
+            res.json(true)
+        }
     }
 }

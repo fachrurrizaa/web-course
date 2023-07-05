@@ -1,13 +1,11 @@
 'use client'
 import { useState, useEffect } from 'react'
 import Layout from '/src/components/admin/Layout';
-import { useRouter } from 'next/navigation';
 import axios from 'axios';
 import PostForm from '@/components/admin/PostForm';
 
 export default function EditPostPage({ params }) {
   const [postInfo, setPostInfo] = useState(null);
-  const router = useRouter();
   const id = params.id;
   useEffect(() => {
     if (!id){
