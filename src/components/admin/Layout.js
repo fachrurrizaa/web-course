@@ -11,9 +11,9 @@ export default function page({children}) {
     }
 
     return (
-        <div className='min-h-screen bg-sky-900 flex'>
+        <div className='min-h-screen bg-teal-50 flex'>
             <NavAdmin/>{
-            <div className='bg-white flex-grow my-2 mr-2 rounded-lg p-4'>{children}</div>
+            <div className='bg-teal-50 flex-grow m-3 rounded-lg p-4'>{children}</div>
             }
         </div>
     )

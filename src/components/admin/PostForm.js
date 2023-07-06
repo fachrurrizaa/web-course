@@ -3,7 +3,7 @@ import Button from '@/components/Button';
 import Input from '@/components/front/form/Input';
 import { useState } from 'react';
 import axios from 'axios';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import Spinner from '../Spinner';
 import { ReactSortable } from 'react-sortablejs';
 
@@ -14,7 +14,8 @@ export default function PostForm({
     price:existingPrice,
     images:existingImages,
 }) {
-    
+  
+  const pathname = usePathname()
   const router = useRouter();
   const [title, setTitle] = useState(existingTitle || '');
   const [description, setDescription] = useState(existingDescription || '');
@@ -84,7 +85,7 @@ export default function PostForm({
               <Spinner/>
             </div>
         )}
-        <label className='w-24 h-24 cursor-pointer text-center flex items-center justify-center text-sm gap-1 text-gray-500 rounded-lg bg-gray-200'>
+        <label className='w-24 h-24 cursor-pointer text-center flex items-center justify-center text-sm gap-1 text-gray-500 rounded-lg bg-slate-100'>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
           <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
         </svg>
@@ -112,7 +113,7 @@ export default function PostForm({
         value={price}
         onChange={e => setPrice(e.target.value)}
       />
-      <Button type={"submit"} className={"rounded-lg bg-blue-900"} content={"Publish"}/>
+      <Button type={"submit"} className={"rounded-lg bg-[#028d94] hover:bg-[#02b2bb]"} content={pathname.includes('/edit') ? "Save" : "Publish" }/>
     </form>
   )
 }
