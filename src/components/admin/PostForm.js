@@ -70,7 +70,7 @@ export default function PostForm({
       />
 
       <label className="label">
-        <span className="label-text font-normal text-[#160442] text-base mb-2">Photo</span>
+        <span className="label-text font-semibold text-[#004f4f] text-base mb-2">Photo</span>
       </label>
       <div className='mb-2 flex flex-wrap gap-1'>
         <ReactSortable list={images} setList={updateImagesOrder} className="flex flex-wrap gap-1">
@@ -97,7 +97,7 @@ export default function PostForm({
       </div>
 
       <label className="label">
-        <span className="label-text font-normal text-[#160442] text-base mb-2">Description</span>
+        <span className="label-text font-semibold text-[#004f4f] text-base mb-2">Description</span>
       </label>
       <textarea 
         placeholder="Description" 
