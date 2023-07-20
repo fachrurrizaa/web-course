@@ -11,7 +11,7 @@ export default function PostForm({
     _id,
     title:existingTitle, 
     description:existingDescription, 
-    price:existingPrice,
+    link:existingLink,
     images:existingImages,
     category: assignedCategory
 }) {
@@ -21,7 +21,7 @@ export default function PostForm({
   const [title, setTitle] = useState(existingTitle || '');
   const [category, setCategory] = useState(assignedCategory || '')
   const [description, setDescription] = useState(existingDescription || '');
-  const [price, setPrice] = useState(existingPrice || '');
+  const [link, setLink] = useState(existingLink || '');
   const [images, setImages] = useState(existingImages || []);
   const [goToPost, setGoToPost] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
@@ -35,7 +35,7 @@ export default function PostForm({
 
   async function savePost(e){
     e.preventDefault();
-    const data = {title, description, price, images, category};
+    const data = {title, description, link, images, category};
     if(_id){
         await axios.put('/api/post', {...data, _id})
     }else{
@@ -124,11 +124,11 @@ export default function PostForm({
         onChange={e => setDescription(e.target.value)}
       />
       <Input 
-        label={"Price"} 
+        label={"Link"} 
         className={"rounded-lg max-w-screen-xl"} 
-        placeholder={"Price"}
-        value={price}
-        onChange={e => setPrice(e.target.value)}
+        placeholder={"Link"}
+        value={link}
+        onChange={e => setLink(e.target.value)}
       />
       <Button type={"submit"} className={"rounded-lg bg-[#028d94] hover:bg-[#02b2bb] mt-2"} content={pathname.includes('/edit') ? "Save" : "Publish" }/>
     </form>
