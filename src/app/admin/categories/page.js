@@ -63,16 +63,16 @@ export default function page() {
   return (
     <Layout>
         <h1 className='text-2xl font-bold text-[#004f4f] leading-tight mb-8 ml-1'>Categories</h1>
-        <form onSubmit={saveCategory} className="flex gap-1 flex-col">
+        <form onSubmit={saveCategory} className="flex gap-2 flex-col">
           <Input 
             label={editedCategory ? `Edit Category ${editedCategory.name}` : "Create New Category"}
             type={"text"}
-            className={"rounded-lg"}
+            className={"rounded-lg max-w-screen-sm"}
             value={name}
             onChange={e => setName(e.target.value)}
             placeholder={"Category Name"} 
           />
-          <select className="select w-full max-w-xs bg-white"
+          <select className="select select-bordered w-full max-w-screen-sm mb-4"
             onChange={e => setParentCategory(e.target.value)}
             value={parentCategory}>
             <option value="0">Choose your parent category</option>
@@ -80,11 +80,11 @@ export default function page() {
               <option value={category._id} key={category._id}>{category.name}</option>
             ))}
           </select>
-          <Button type={"submit"} className={"rounded-lg bg-[#028d94] hover:bg-[#02b2bb] py-4"} content={"Save"}/>
+          <Button type={"submit"} className={"rounded-lg bg-[#028d94] hover:bg-[#02b2bb] py-4 w-20"} content={"Save"}/>
         </form>
         {categories.length === 0 ? '' : 
           <div className="overflow-x-auto mt-8">
-            <table className="table">
+            <table className="table text-center">
                 <thead>
                     <tr>
                         <th className="bg-teal-100">Category Name</th>
@@ -96,7 +96,7 @@ export default function page() {
                     {categories.length > 0 && categories.map(category => (
                     <tr className="hover" key={category._id}>
                         <td className="">{category.name}</td>
-                        <td className="">{category?.parent?.name}</td>
+                        <td className="">{category?.parent?.name ? category?.parent?.name : '-'}</td>
                         <td>
                             <Button className="bg-[#028d94] hover:bg-[#02b2bb] w-20 min-h-[28px] h-7 text-white p-0 font-normal normal-case rounded-md gap-1 mr-1 text-sm" click={() => editCategory(category)} content={
                               <>

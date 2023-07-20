@@ -4,6 +4,7 @@ import { useSession } from 'next-auth/react';
 
 export default function page() {
     const {data : session} = useSession();
+
     if(!session){
         return  (
             <h1>Wait bro</h1>

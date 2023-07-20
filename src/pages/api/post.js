@@ -14,16 +14,16 @@ export default async function post(req, res) {
     }
 
     if (method === 'POST'){
-        const {title, description, price, images} = req.body;
+        const {title, description, price, images, category} = req.body;
         const postDoc = await Post.create({
-            title, description, price, images
+            title, description, price, images, category
         })
         res.json(postDoc)
     }
     
     if (method === 'PUT'){
-        const {title, description, price, images, _id} = req.body;
-        await Post.updateOne({_id}, {title, description, price, images})
+        const {title, description, price, images, category, _id} = req.body;
+        await Post.updateOne({_id}, {title, description, price, images, category})
         res.json(true)
     }
 

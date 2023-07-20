@@ -1,8 +1,19 @@
 import Image from 'next/image';
 import Button from '../../Button';
 import Check from "/public/assets/check-icon.svg";
+import { useContext } from 'react';
+import { Context } from '@/components/context/MyContext';
+import { useRouter } from 'next/navigation';
 
 export default function ProductCard({ features }) {
+    const { isSubscribe } = useContext(Context);
+    const router = useRouter()
+
+    function subsHandler (){
+        if(!isSubscribe){
+            router.push('/pricing')
+        }
+    }
     return (
         <div className='flex flex-col w-96 h-[520px] bg-base-100 shadow-xl rounded-xl'>
             <figure className='pt-10 flex items-center'>
@@ -29,7 +40,7 @@ export default function ProductCard({ features }) {
                     ))
                 }
             </div>
-            <Button className={"text-white w-[85%] bg-[#028d94] hover:bg-[#02b2bb] mx-auto"} content={"Download Now"}/>
+            <Button className={"text-white w-[85%] bg-[#028d94] hover:bg-[#02b2bb] mx-auto"} click={()=>subsHandler()} content={"Download Now"}/>
         </div>
     )
 }
