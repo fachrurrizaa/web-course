@@ -7,9 +7,10 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import Button from '@/components/Button';
+import truncate from 'truncate';
 
 export default function page() {
-    const [posts, setPost] = useState([]);
+    const [posts, setPosts] = useState([]);
     const MySwal = withReactContent(Swal);
 
     useEffect(() => {
@@ -18,7 +19,7 @@ export default function page() {
 
     function fetchPost(){
         axios.get('/api/post').then(response => {
-            setPost(response.data)
+            setPosts(response.data)
         })
     }
 
@@ -48,6 +49,7 @@ export default function page() {
                         <thead>
                             <tr>
                                 <th className="bg-teal-100">Title</th>
+                                <th className="bg-teal-100">Description</th>
                                 <th className="bg-teal-100">Action</th>
                             </tr>
                         </thead>
@@ -55,6 +57,7 @@ export default function page() {
                             {posts.map(post => (
                             <tr className="hover" key={post._id}>
                                 <td className="">{post.title}</td>
+                                <td className="">{truncate(`${post.description}`, 130)}</td>
                                 <td>
                                     <Link href={'/admin/post/edit/'+post._id} className="bg-[#028d94] hover:bg-[#02b2bb] text-white inline-flex py-1 px-2 rounded-md gap-1 mr-1 text-sm">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-5">

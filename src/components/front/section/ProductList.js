@@ -1,14 +1,20 @@
 import ProductItem from './ProductItem';
-import { Context } from '../../context/MyContext';
-import { useContext } from 'react';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 export default function ProductList() {
-    const { products } = useContext(Context)
+    const [posts, setPosts] = useState([]);
+
+    useEffect(()=>{
+        axios.get('/api/post').then(response => {
+            setPosts(response.data)
+        })
+    })
     
     return (
         <div className="flex justify-around">
-        {products.map((product) => (
-            <ProductItem key={product.id} id={product.id} thumbnails={product.thumbnails} name={product.name} subtitle={product.subtitle}/>
+        {posts.map((post) => (
+            <ProductItem key={post._id} id={post._id} thumbnails={post.images[0]} title={post.title} description={post.description}/>
             ))
         }
         </div>

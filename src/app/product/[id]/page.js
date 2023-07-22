@@ -1,20 +1,29 @@
 'use client'
 import Navbar from "@/components/front/navbar/Navbar"
 import ProductPage from "@/components/front/product-page/ProductPage"
-import { Context } from "@/components/context/MyContext"
-import { useContext } from "react"
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 export default function Product({ params }) {
-    const id = params.id - 1
-    const { products } = useContext(Context)
+    const [post, setPost] = useState(null);
+    const id = params.id;
+
+    useEffect(() => {
+        if (!id){
+        return;
+        }
+        axios.get('/api/post?id='+id).then(response => {
+        setPost(response.data)
+        })
+    }, [id])
     
-    if (products[id] == null){
+    if (post == null){
         return <h1>Loading . . .</h1>
     }else{
         return (
             <>
                 <Navbar/>
-                <ProductPage name={ products[id].name } subtitle={ products[id].subtitle } features={ products[id].features } />
+                <ProductPage title={ post.title } description={ post.description } images={ post.images } link={ post.link } />
             </>
         )
     }

@@ -19,21 +19,17 @@ const Provider = ({children}) => {
   
     }, [])
 
-    const [products, setProducts] = useState([]);
+    const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-      const getProducts = async () => {
-        const { data } = await axios(`https://zullkit-backend.belajarkoding.com/api/products`);
-  
-        setProducts(data.data.data);
-      };
-  
-      getProducts().then(r => r);
+      axios.get('/api/post').then(response => {
+        setPosts(response.data)
+      })
     }, []);
 
     return (
       <SessionProvider>
-        <Context.Provider value={{products, categories}}>
+        <Context.Provider value={{posts, categories}}>
             {children}
         </Context.Provider>
       </SessionProvider>
