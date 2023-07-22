@@ -24,6 +24,7 @@
     "react-dom": "18.2.0",
     "react-sortablejs": "^6.1.4",
     "react-spinners": "^0.13.8",
+    "supports-color": "^8.1.1",
     "sweetalert2": "^11.6.13",
     "sweetalert2-react-content": "^5.0.7",
     "swiper": "^10.0.4",
