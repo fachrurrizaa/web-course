@@ -27,9 +27,11 @@ const Provider = ({children}) => {
       })
     }, []);
 
+    const [isSubscribe, setIsSubscribe] = useState(false);
+
     return (
       <SessionProvider>
-        <Context.Provider value={{posts, categories}}>
+        <Context.Provider value={{posts, categories, isSubscribe, setIsSubscribe}}>
             {children}
         </Context.Provider>
       </SessionProvider>

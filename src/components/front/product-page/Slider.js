@@ -1,5 +1,5 @@
 import {Swiper, SwiperSlide} from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y, FreeMode, Thumbs } from 'swiper/modules';
+import { Autoplay, Navigation, Pagination, FreeMode, Thumbs } from 'swiper/modules';
 import './swiper-bundle.min.css';
 import { useState } from 'react';
 
@@ -8,20 +8,22 @@ export default function Slider ({ images }) {
     return (
         <>
             <Swiper
-                modules={[Navigation, Pagination, Scrollbar, A11y, FreeMode, Thumbs]}
+                modules={[Autoplay, Navigation, Pagination, FreeMode, Thumbs]}
                 style={{
                     '--swiper-navigation-color': '#fff',
                     '--swiper-pagination-color': '#fff',
+                }}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
                 }}
                 loop={true}
                 spaceBetween={50}
                 slidesPerView={1}
                 navigation={true}
                 pagination={{ clickable: true }}
-                scrollbar={{ draggable: true }}
                 thumbs={{ swiper: thumbsSwiper }}
-                onSlideChange={() => console.log('slide change')}
-                onSwiper={(swiper) => console.log(swiper)}
+                className='mySwiper2'
                 >
                 {images.map((image) => (
                     <SwiperSlide key={image}>

@@ -2,12 +2,25 @@ import Image from 'next/image';
 import Button from '../../Button';
 import Check from "/public/assets/check-icon.svg";
 import { useRouter } from 'next/navigation';
+import { useSession } from 'next-auth/react';
+import { useContext } from 'react';
+import { Context } from '@/components/context/MyContext';
 
 export default function ProductCard({ link }) {
-
+    const {data : session} = useSession()
+    const {isSubscribe} = useContext(Context)
+    console.log(isSubscribe)
     const router = useRouter()
     function clickHandler (){
-        router.push(`${ link }`)
+        if(!session){
+            router.push(`/login`)
+        }else if(session){
+            if(isSubscribe){
+                window.open(`${link}`)
+            }else{
+                router.push(`/pricing`)
+            }
+        }
     }
     return (
         <div className='flex flex-col w-96 h-[520px] bg-base-100 shadow-xl rounded-xl'>
@@ -44,7 +57,7 @@ export default function ProductCard({ link }) {
                     <Image src={ Check } height={0} width={0} alt="check-icon" className="w-6 h-auto mr-8"/>
                 </div>
             </div>
-            <Button className={"text-white w-[85%] bg-[#028d94] hover:bg-[#02b2bb] mx-auto"} click={()=>clickHandler(link)} content={"Download Now"}/>
+            <Button className={"text-white w-[85%] bg-[#028d94] hover:bg-[#02b2bb] mx-auto mt-6"} click={()=>clickHandler(link)} content={"Download Now"}/>
         </div>
     )
 }
