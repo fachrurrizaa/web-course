@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { BeatLoader } from 'react-spinners';
 
-export default function Payment() {
+export default function page() {
     const router = useRouter();
 
     useEffect(()=>{

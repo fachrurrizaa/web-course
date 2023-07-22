@@ -4,7 +4,7 @@ import ProductPage from "@/components/front/product-page/ProductPage"
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-export default function Product({ params }) {
+export default function page({ params }) {
     const [post, setPost] = useState(null);
     const id = params.id;
 

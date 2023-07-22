@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Page() {
+export default function page() {
   return (
     <div className='hero-overlay bg-opacity-60 flex rounded-md mt-5 mb-8 p-10 font-serif'>
       <div className='w-1/2'>

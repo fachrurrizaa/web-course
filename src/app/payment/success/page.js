@@ -4,7 +4,7 @@ import { useContext, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Context } from '@/components/context/MyContext';
 
-export default function Success() {
+export default function page() {
     const router = useRouter();
     const {setIsSubscribe} = useContext(Context)
 

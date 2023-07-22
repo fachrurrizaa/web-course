@@ -24,7 +24,7 @@ export default function Navbar() {
         <div>{
           session ? (
             <div className="avatar flex justify-center items-center gap-5">
-              <p className="font-medium text-base text-[#004f4f]">Hello, {session.user.name}</p>
+              <p className="font-medium text-base text-[#004f4f]">Hello, {session.user?.name}</p>
               <div className="rounded-full btn btn-ghost btn-circle avatar">
                 <Image src={pp} width={0} height={0} alt={"img"} />
               </div> 

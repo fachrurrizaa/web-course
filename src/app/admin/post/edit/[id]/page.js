@@ -4,7 +4,7 @@ import Layout from '/src/components/admin/Layout';
 import axios from 'axios';
 import PostForm from '@/components/admin/PostForm';
 
-export default function EditPostPage({ params }) {
+export default function page({ params }) {
   const [postInfo, setPostInfo] = useState(null);
   const id = params.id;
   useEffect(() => {
