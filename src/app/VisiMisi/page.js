@@ -4,12 +4,12 @@ export default function page() {
   return (
     <div className='hero-overlay bg-opacity-60 flex rounded-md mt-5 mb-8 p-10 font-serif'>
       <div className='w-1/2'>
-        <h1 className='mb-5 text-3xl font-bold max-w-md'>
+        <h2 className='mb-5 text-3xl font-bold max-w-md'>
           SEJARAH PERUSAHAAN KAMI <br />
-        </h1>
-        <h4 className='text-justify-center leading-relaxed'>
+        </h2>
+        <p className='text-justify-center leading-relaxed'>
           Web design telah menggunakan teknologi dan inovasi untuk meningkatkan pengalaman dalam belajar secara online, seperti penggunaan platform pembelajaran interaktif hingga pengembangan metode pembelajaran yang baru
-        </h4>
+        </p>
         <button className='mt-5 px-4 py-2 bg-blue-500 text-white rounded-md'>
           Baca Selengkapnya
         </button>
@@ -20,7 +20,7 @@ export default function page() {
           <div className='w-1/2 mx-auto mb-5'>
             <h2 className='text-xl font-semibold'>Visi:</h2>
             <p className='text-justify'>
-              Menjadi platform penyedia design terkemuka yang mampu memberdayakan individu untuk mencapai potensi designer yang kreatif dan inovatif
+              Menjadi platform penyedia design terkemuka yang mampu memberdayakan individu untuk mencapai potensi designer yang kreatif dan inovatif,dan memeberikan solusi desain terbaik yang relevan dengan perkembangan industri dan kebutuhan klien
             </p>
           </div>
           <div className='w-1/2 mx-auto'>
