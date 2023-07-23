@@ -9,8 +9,11 @@ export default function ProductList() {
         axios.get('/api/post').then(response => {
             setPosts(response.data)
         })
+        if (posts.length > 3){
+            setPosts(posts.slice(-3))
+        }
     })
-    
+
     return (
         <div className="flex justify-around">
         {posts.map((post) => (
