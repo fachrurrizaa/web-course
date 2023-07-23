@@ -20,13 +20,13 @@ export default function page() {
           <div className='w-1/2 mx-auto mb-5'>
             <h2 className='text-xl font-semibold'>Visi:</h2>
             <p className='text-justify'>
-              Menjadi platform penyedia design terkemuka yang mampu memberdayakan individu untuk mencapai potensi designer yang kreatif dan inovatif,dan memeberikan solusi desain terbaik yang relevan dengan perkembangan industri dan kebutuhan klien
+              Website design ini menjadi platform penyedia design terkemuka yang mampu memberdayakan individu untuk mencapai potensi designer yang kreatif dan inovatif,dan memberikan solusi desain terbaik yang relevan dengan perkembangan industri dan kebutuhan klien
             </p>
           </div>
           <div className='w-1/2 mx-auto'>
             <h2 className='text-xl font-semibold'>Misi:</h2>
             <p className='text-justify'>
-              Menyediakan akses yang mudah,fleksibel dan terjangkau dengan materi design online yang berkualitas tinggi untuk pengguna web design guna meningkatkan keterampilan design,mengembangkan karier,hingga menambah portofolio para designer
+              Menyediakan akses yang mudah,fleksibel dan terjangkau dengan materi design online yang berkualitas tinggi untuk pengguna web design untuk meningkatkan keterampilan design,mengembangkan karier,hingga menambah portofolio para designer
             </p>
           </div>
         </div>
@@ -34,3 +34,4 @@ export default function page() {
     </div>
   );
 }
+ 
