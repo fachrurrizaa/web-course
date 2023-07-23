@@ -20,7 +20,7 @@ export default function Page() {
           <div className='w-1/2 mx-auto mb-5'>
             <h2 className='text-xl font-semibold'>Visi:</h2>
             <p className='text-justify'>
-              Menjadi platform penyedia design terkemuka yang mampu memberdayakan individu untuk mencapai potensi designer yang kreatif dan inovatif,dan memeberikan solusi desain terbaik yang relevan dengan perkembangan industri dan kebutuhan klien
+              Website design ini menjadi platform penyedia design terkemuka yang mampu memberdayakan individu untuk mencapai potensi designer yang kreatif dan inovatif,dan memberikan solusi desain terbaik yang relevan dengan perkembangan industri dan kebutuhan klien
             </p>
           </div>
           <div className='w-1/2 mx-auto'>
