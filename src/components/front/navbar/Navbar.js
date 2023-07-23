@@ -4,6 +4,7 @@ import Link from "next/link";
 import Button from '../../Button';
 import { useSession } from "next-auth/react"
 import pp from '/public/assets/pp.jpg'
+import logo from '/public/assets/logo.jpeg'
 
 export default function Navbar() {
   const { data: session } = useSession()
@@ -11,7 +12,7 @@ export default function Navbar() {
   return (
     <header className="flex justify-between items-center p-5 px-32">
         <Link href='/'>
-            <h1 className="cursor-pointer text-4xl font-bold text-[#004f4f]">Rizaa</h1>
+            <Image src={logo} width={200} height={0} alt={"logo"}/>
         </Link>
         <nav>
             <ul className="flex justify-between">
