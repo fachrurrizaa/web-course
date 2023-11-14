@@ -3,12 +3,17 @@ import Image from "next/image";
 import Check from "/public/assets/check-icon.svg";
 import Button from "../Button";
 import { useRouter } from 'next/navigation';
+import { useSession } from 'next-auth/react';
 
 export default function CardGold() {
     const router = useRouter();
+    const {data : session} = useSession();
 
     function handleClick(){
-        router.push('/payment')
+        if(!session){
+            router.push(`/login`)
+        }else if(session)
+            router.push('/payment')
     }
 
     return (

@@ -2,14 +2,16 @@
 import Link from 'next/link';
 import React from 'react'
 import Layout from '/src/components/admin/Layout';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import Button from '@/components/Button';
 import truncate from 'truncate';
+import { Context } from '@/components/context/MyContext';
 
 export default function page() {
+    const {setIsUpdated} = useContext(Context);
     const [posts, setPosts] = useState([]);
     const MySwal = withReactContent(Swal);
 
@@ -36,6 +38,7 @@ export default function page() {
           const {_id} = post;
           await axios.delete('/api/post?id='+_id);
           fetchPost();
+          setIsUpdated(true);
         }
       })
     }

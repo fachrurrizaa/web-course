@@ -9,7 +9,6 @@ import { Context } from '@/components/context/MyContext';
 export default function ProductCard({ link }) {
     const {data : session} = useSession()
     const {isSubscribe} = useContext(Context)
-    console.log(isSubscribe)
     const router = useRouter()
     function clickHandler (){
         if(!session){

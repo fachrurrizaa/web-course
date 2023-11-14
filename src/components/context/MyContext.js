@@ -6,7 +6,8 @@ import { SessionProvider } from "next-auth/react"
 const Context = createContext(null)
 
 const Provider = ({children}) => {
-    const [categories, setCategories] = useState([])
+    const [categories, setCategories] = useState([]);
+    const [isUpdated, setIsUpdated] = useState(false);
 
     useEffect(() => {
         const getCategories = async () => {
@@ -25,13 +26,14 @@ const Provider = ({children}) => {
       axios.get('/api/post').then(response => {
         setPosts(response.data)
       })
-    }, []);
+      setIsUpdated(false)
+    }, [isUpdated]);
 
     const [isSubscribe, setIsSubscribe] = useState(false);
 
     return (
       <SessionProvider>
-        <Context.Provider value={{posts, categories, isSubscribe, setIsSubscribe}}>
+        <Context.Provider value={{posts, categories, isSubscribe, setIsSubscribe, setIsUpdated, setPosts}}>
             {children}
         </Context.Provider>
       </SessionProvider>

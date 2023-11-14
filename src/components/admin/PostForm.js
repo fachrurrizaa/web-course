@@ -1,11 +1,12 @@
 'use client'
 import Button from '@/components/Button';
 import Input from '@/components/front/form/Input';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { useRouter, usePathname } from 'next/navigation';
 import Spinner from '../Spinner';
 import { ReactSortable } from 'react-sortablejs';
+import { Context } from '@/components/context/MyContext';
 
 export default function PostForm({
     _id,
@@ -15,8 +16,8 @@ export default function PostForm({
     images:existingImages,
     category: assignedCategory
 }) {
-  
-  const pathname = usePathname()
+  const {setIsUpdated} = useContext(Context);
+  const pathname = usePathname();
   const router = useRouter();
   const [title, setTitle] = useState(existingTitle || '');
   const [category, setCategory] = useState(assignedCategory || '')
@@ -25,7 +26,7 @@ export default function PostForm({
   const [images, setImages] = useState(existingImages || []);
   const [goToPost, setGoToPost] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
-  const [categories, setCategories] = useState([])
+  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
     axios.get('/api/categories').then(result => {
@@ -42,6 +43,7 @@ export default function PostForm({
         await axios.post('/api/post', data)
     }
     setGoToPost(true)
+    setIsUpdated(true)
   }
 
   if (goToPost){
