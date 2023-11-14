@@ -1,18 +1,14 @@
 import ProductItem from './ProductItem';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
+import { Context } from '@/components/context/MyContext';
 
 export default function ProductList() {
-    const [posts, setPosts] = useState([]);
+    const {posts, setPosts} = useContext(Context)
 
-    useEffect(()=>{
-        axios.get('/api/post').then(response => {
-            setPosts(response.data)
-        })
-        if (posts.length > 3){
-            setPosts(posts.slice(-3))
-        }
-    })
+    if (posts.length > 3){
+        setPosts(posts.slice(-3))
+    }
 
     return (
         <div className="flex justify-around">

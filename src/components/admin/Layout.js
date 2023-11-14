@@ -6,7 +6,7 @@ import ForbidenAccess from '../ForbidenAccess';
 export default function page({children}) {
     const {data : session} = useSession()
     const email = 'mfriza69@gmail.com';
-    const email1 ='mujiyanto@amikom.ac.id';
+    const email1 ='aryobimo@students.amikom.ac.id';
 
     if(session === null){
         return  (
