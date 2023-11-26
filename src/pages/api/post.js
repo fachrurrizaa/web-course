@@ -1,7 +1,7 @@
 import mongooseConnect from "../../../lib/mongoose";
 import { Post } from "../../../models/Post";
 
-export default async function post(req, res) {
+export default async function handler(req, res) {
     const {method} = req;
     await mongooseConnect();
     
