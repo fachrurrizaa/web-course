@@ -5,7 +5,7 @@ import mime from 'mime-types';
 import mongooseConnect from './../../../lib/mongoose';
 const bucketName = 'next-webcourse';
 
-export default async function handle(req, res) {
+export default async function handler(req, res) {
     await mongooseConnect()
     const form = new multiparty.Form()
 
