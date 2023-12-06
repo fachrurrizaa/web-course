@@ -27,7 +27,7 @@ export const authOptions = {
           email: credentials.email 
         }).select('+password'); 
         if (user) {
-          const isPasswordCorrect = await bcrypt.compare(
+          const isPasswordCorrect = await compare(
             credentials.password,
             user.password
           );

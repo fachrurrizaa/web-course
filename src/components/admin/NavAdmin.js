@@ -4,11 +4,31 @@ import React from 'react'
 import { usePathname } from 'next/navigation'
 import Button from '../Button';
 import { signOut } from 'next-auth/react';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
 export default function NavAdmin() {
     const inactiveLink = 'flex gap-1 p-3';
     const activeLink = inactiveLink+' bg-[#028d94] text-white rounded-lg';
     const pathname = usePathname();
+
+    const MySwal = withReactContent(Swal);
+
+    function handleLogOut(){
+        MySwal.fire({
+          title: 'Are you sure?',
+          text: 'Do you want to log out?',
+          showCancelButton: true,
+          confirmButtonText: 'Yes, Log out!',
+          confirmButtonColor: '#d55',
+          cancelButtonText: 'Cancel',
+        }).then((result) => {
+          if (result.value) { // Change isConfirmed to value
+            signOut({ callbackUrl: 'http://localhost:3000' });
+          }
+        });
+    }    
+
     return (
         <aside className='p-7 text-slate-800 border-r w-[13%]'>
             <Link href={'/'} className='flex gap-1 mb-8'>
@@ -51,7 +71,7 @@ export default function NavAdmin() {
                     </svg>
                     Settings
                 </Link>
-                <Button className={`rounded-lg bg-teal-50 text-slate-800 normal-case font-normal text-base justify-start hover:flex hover:gap-1 hover:p-3 hover:bg-[#028d94] hover:text-white hover:rounded-lg ${pathname.includes('/settings') ? activeLink : inactiveLink}`} click={()=>signOut({ callbackUrl: 'http://localhost:3000' })} content={
+                <Button className={`rounded-lg bg-teal-50 text-slate-800 normal-case font-normal text-base justify-start hover:flex hover:gap-1 hover:p-3 hover:bg-[#028d94] hover:text-white hover:rounded-lg ${pathname.includes('/settings') ? activeLink : inactiveLink}`} click={() => handleLogOut()} content={
                     <>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
