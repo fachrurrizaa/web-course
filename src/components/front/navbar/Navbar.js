@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Button from '../../Button';
-import { useSession } from "next-auth/react"
+import { signOut, useSession } from "next-auth/react"
 import pp from '/public/assets/pp.jpg'
 import logo from '/public/assets/logo.jpeg'
 
@@ -25,11 +25,27 @@ export default function Navbar() {
         </nav>
         <div>{
           session ? (
-            <div className="avatar flex justify-center items-center gap-5">
+            <div className="flex items-center gap-10">
               <p className="font-medium text-base text-[#004f4f]">Hello, {session?.user?.name}</p>
-              <div className="rounded-full btn btn-ghost btn-circle avatar">
-                <Image src={pp} width={0} height={0} alt={"img"} />
-              </div> 
+              <div className="flex-none gap-2">
+                <div className="dropdown dropdown-end">
+                  <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                    <div className="w-10 rounded-full">
+                      <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                    </div>
+                  </div>
+                  <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+                    <li>
+                      <a className="justify-between">
+                        Profile
+                        <span className="badge">New</span>
+                      </a>
+                    </li>
+                    <li><a>Settings</a></li>
+                    <li className="bg-red-500 rounded-lg text-white" onClick={() => signOut()}><a>Logout</a></li>
+                  </ul>
+                </div>
+              </div>
             </div>
           ) : (
             <>

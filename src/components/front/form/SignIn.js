@@ -37,7 +37,7 @@ export default function SignIn() {
 
   return (
     <div>
-        <form className='flex justify-center items-center flex-col' onSubmit={handleSubmit}>
+        <div className='flex justify-center items-center flex-col'>
             <h1 className='font-bold text-5xl text-[#004f4f] mb-16 mt-28'>Welcome Back</h1>
             <div className='w-80'>
               <Input type={"email"} label={"Email Address"} placeholder={"Type your email"} onChange={(e) => setData({...data, email: e.target.value})}/>
@@ -45,7 +45,7 @@ export default function SignIn() {
               <p className={`text-red-500 ${error ? "block" : "hidden"}`}>{`*${errorMessage}`}</p>
             </div>
             <div className='max-w-xs w-full'>
-              <Button type={"submit"} className={'w-full text-white bg-[#028d94] hover:bg-[#02b2bb] mt-8 font-semibold'} content={"Sign In"}/>
+              <Button type={"submit"} className={'w-full text-white bg-[#028d94] hover:bg-[#02b2bb] mt-8 font-semibold'} content={"Sign In"} click={()=>handleSubmit(data)}/>
               <Button click={()=>signIn('google', { callbackUrl: '/'})} className={'w-full text-[#004f4f] bg-[#EBEDF3] my-4 font-medium hover:bg-slate-300'} content={
                 <div className='flex items-center w-full'>
                   <Image src={googleIcon} width={0} height={30} alt={"img"} className='mr-10'/>
@@ -56,7 +56,7 @@ export default function SignIn() {
                 Don't have an account?
               </Link>
             </div>
-        </form>
+        </div>
         <Brand/>
     </div>
   )

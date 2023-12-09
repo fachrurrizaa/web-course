@@ -6,6 +6,8 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import axios from 'axios';
 import emailRegex from 'email-regex';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
 export default function SignUp() {
   const router = useRouter()
@@ -16,7 +18,7 @@ export default function SignUp() {
   const [emailError, setEmailError] = useState(false)
   const [passwordError, setPasswordError] = useState(false)
   const [valid, setValid] = useState(false)
-  const [goToHome, setGoToHome] = useState(false)
+  const MySwal = withReactContent(Swal)
 
   const validate = (data) => {
     if (data.name.length < 3) {
@@ -46,13 +48,20 @@ export default function SignUp() {
     const data = { name, email, password }
     validate(data)
     if (valid) {
-      await axios.post('/api/user', data)
-      setGoToHome(true)
+      const res = await axios.post('/api/user', data)
+      if (res.status === 200) {
+        MySwal.fire({
+          title: 'Success',
+          text: 'User created successfully',
+          icon: 'success',
+          timer: 2000,
+          showConfirmButton: false,
+        })
+        setTimeout(() => {
+          router.push('/login')
+        }, 2000)
+      }
     }
-  }
-
-  if (goToHome){
-    return router.push('/login')
   }
 
   return (
