@@ -8,7 +8,6 @@ import logo from '/public/assets/logo.jpeg'
 
 export default function Navbar() {
   const { data: session } = useSession()
-  console.log({session})
 
   return (
     <header className="flex justify-between items-center p-5 px-32">

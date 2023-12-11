@@ -18,8 +18,7 @@ export default function SignIn() {
   const [errorMessage, setErrorMessage] = useState("")
   const router = useRouter()
 
-  async function handleSubmit(e){
-    e.preventDefault()
+  async function handleSubmit(){
     const res = await signIn("credentials", {
       email: data.email,
       password: data.password,
@@ -32,7 +31,6 @@ export default function SignIn() {
       setError(true)
       setErrorMessage(res.error)
     }
-    console.log(res)
   }
 
   return (
