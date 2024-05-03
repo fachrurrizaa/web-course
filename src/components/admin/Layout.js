@@ -6,7 +6,8 @@ import ForbidenAccess from '../ForbidenAccess';
 export default function page({children}) {
     const {data : session} = useSession()
     const email = 'mfriza69@gmail.com';
-    const email1 ='aryobimo@students.amikom.ac.id';
+    const email1 ='fitriaaif@students.amikom.ac.id';
+    const email2 = 'fmuh748@students.amikom.ac.id'
 
     if(session === null){
         return  (
@@ -14,12 +15,12 @@ export default function page({children}) {
         )
     }
     if(session){
-        if ((session?.user?.email !== email) && (session?.user?.email !== email1)){
+        if ((session?.user?.email !== email) && (session?.user?.email !== email1) && (session?.user?.email !== email2)){
             return (
                 <ForbidenAccess/>
             )
         }
-        else if ((session?.user?.email === email) || (session?.user?.email === email1)){
+        else if ((session?.user?.email === email) || (session?.user?.email === email1) || (session?.user?.email === email2)){
             return (
                 <div className='min-h-screen bg-teal-50 flex'>
                     <NavAdmin/>
