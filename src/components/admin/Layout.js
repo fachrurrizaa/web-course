@@ -8,6 +8,7 @@ export default function page({children}) {
     const email = 'mfriza69@gmail.com';
     const email1 ='fitriaaif@students.amikom.ac.id';
     const email2 = 'fmuh748@students.amikom.ac.id'
+    const email3 = 'gustiayu@students.amikom.ac.id'
 
     if(session === null){
         return  (
@@ -15,12 +16,12 @@ export default function page({children}) {
         )
     }
     if(session){
-        if ((session?.user?.email !== email) && (session?.user?.email !== email1) && (session?.user?.email !== email2)){
+        if ((session?.user?.email !== email) && (session?.user?.email !== email1) && (session?.user?.email !== email2) && (session?.user?.email !== email3)){
             return (
                 <ForbidenAccess/>
             )
         }
-        else if ((session?.user?.email === email) || (session?.user?.email === email1) || (session?.user?.email === email2)){
+        else if ((session?.user?.email === email) || (session?.user?.email === email1) || (session?.user?.email === email2) || (session?.user?.email === email3)){
             return (
                 <div className='min-h-screen bg-teal-50 flex'>
                     <NavAdmin/>
