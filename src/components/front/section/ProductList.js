@@ -13,7 +13,7 @@ export default function ProductList() {
     return (
         <div className="flex justify-around">
         {posts.map((post) => (
-            <ProductItem key={post._id} id={post._id} thumbnails={post.images[0]} title={post.title} description={post.description}/>
+            <ProductItem key={post._id} id={post._id} thumbnails={post.images[0]} title={post.title} description={post.description} category={post.category}/>
             ))
         }
         </div>
