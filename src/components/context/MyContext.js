@@ -1,43 +1,95 @@
+// 'use client'
+// import axios from "axios";
+// import { createContext, useEffect, useState } from "react";
+// import { SessionProvider } from "next-auth/react"
+
+// const Context = createContext(null)
+
+// const Provider = ({children}) => {
+//   const [categories, setCategories] = useState([]);
+//   const [isUpdated, setIsUpdated] = useState(false);
+
+//   useEffect(() => {
+//     fetchCategories();
+//   }, []);
+
+//   async function fetchCategories() {
+//     try {
+//       const response = await axios.get('/api/categories');
+//       setCategories(response.data);
+//     } catch (error) {
+//       console.error('Error fetching categories:', error);
+//     }
+//   }
+
+//     const [posts, setPosts] = useState([]);
+
+//     useEffect(() => {
+//       axios.get('/api/post').then(response => {
+//         setPosts(response.data)
+//       })
+//       setIsUpdated(false)
+//     }, [isUpdated]);
+
+//     const [isSubscribe, setIsSubscribe] = useState(false);
+
+//     return (
+//       <SessionProvider>
+//         <Context.Provider value={{posts, categories, isSubscribe, setIsSubscribe, setIsUpdated, setPosts}}>
+//             {children}
+//         </Context.Provider>
+//       </SessionProvider>
+//     )
+// }
+
+// export {Context, Provider}
 'use client'
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
-import { SessionProvider } from "next-auth/react"
+import { SessionProvider } from "next-auth/react";
 
-const Context = createContext(null)
+const Context = createContext(null);
 
 const Provider = ({children}) => {
-    const [categories, setCategories] = useState([]);
-    const [isUpdated, setIsUpdated] = useState(false);
+  const [categories, setCategories] = useState([]);
+  const [isUpdated, setIsUpdated] = useState(false);
 
-    // useEffect(() => {
-    //     const getCategories = async () => {
-    //       const { data } = await axios(`https://zullkit-backend.belajarkoding.com/api/categories`)
+  useEffect(() => {
+      const fetchCategories = async () => {
+          try {
+              const response = await axios.get('/api/categories');
+              setCategories(response.data);
+              setIsUpdated(false);
+          } catch (error) {
+              console.error("Error fetching categories:", error);
+          }
+      };
 
-    //       setCategories(data.data.data)
-    //     }
-  
-    //     getCategories().then(r => r)
-  
-    // }, [])
+      fetchCategories();
+  }, [isUpdated]);
 
-    const [posts, setPosts] = useState([]);
-
-    useEffect(() => {
-      axios.get('/api/post').then(response => {
-        setPosts(response.data)
+  useEffect(() => {
+    axios.get('/api/post')
+      .then(response => {
+        setPosts(response.data);
       })
-      setIsUpdated(false)
-    }, [isUpdated]);
+      .catch(error => {
+        console.error('Error fetching posts:', error);
+      });
+    setIsUpdated(false);
+  }, [isUpdated]);
 
-    const [isSubscribe, setIsSubscribe] = useState(false);
+  const [posts, setPosts] = useState([]);
 
-    return (
-      <SessionProvider>
-        <Context.Provider value={{posts, categories, isSubscribe, setIsSubscribe, setIsUpdated, setPosts}}>
-            {children}
-        </Context.Provider>
-      </SessionProvider>
-    )
+  const [isSubscribe, setIsSubscribe] = useState(false);
+
+  return (
+    <SessionProvider>
+      <Context.Provider value={{posts, categories, isSubscribe, setIsSubscribe, setIsUpdated, setPosts}}>
+        {children}
+      </Context.Provider>
+    </SessionProvider>
+  );
 }
 
-export {Context, Provider}
+export {Context, Provider};
