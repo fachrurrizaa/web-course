@@ -7,7 +7,7 @@ export default function page({children}) {
     const {data : session} = useSession()
     const email = 'mfriza69@gmail.com';
     const email1 ='fitriaaif@students.amikom.ac.id';
-    const email2 = 'fmuh748@students.amikom.ac.id'
+    const email2 = 'farhanmuh012@students.amikom.ac.id'
     const email3 = 'gustiayu@students.amikom.ac.id'
     const email4 = 'lailiauliafitri@students.amikom.ac.id'
 
